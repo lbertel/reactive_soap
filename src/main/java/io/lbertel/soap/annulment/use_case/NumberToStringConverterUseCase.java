@@ -13,7 +13,7 @@ public class NumberToStringConverterUseCase {
         this.repository = repository;
     }
 
-    public Mono<String> execute() {
+    public Mono<String> convert() {
         return repository.converter();
     }
 

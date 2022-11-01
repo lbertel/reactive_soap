@@ -10,14 +10,14 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/temperature-converter")
 public class NumberToStringController {
 
-    private final NumberToStringConverterUseCase useCase;
+    private final NumberToStringConverterUseCase numberToStringUseCase;
 
-    public NumberToStringController(NumberToStringConverterUseCase useCase) {
-        this.useCase = useCase;
+    public NumberToStringController(NumberToStringConverterUseCase numberToStringUseCase) {
+        this.numberToStringUseCase = numberToStringUseCase;
     }
 
     @GetMapping("/")
     private Mono<String> converter(){
-        return useCase.execute();
+        return numberToStringUseCase.convert();
     }
 }
